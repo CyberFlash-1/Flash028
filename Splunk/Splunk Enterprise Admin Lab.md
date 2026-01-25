@@ -16,10 +16,9 @@ The goal was to simulate a small-scale Splunk deployment, including forwarding l
 
 
 <div align="center">
- <img src =https://github.com/user-attachments/assets/1d94b9fe-bd19-4e9a-b130-5dd7ffb2c4d5 width="500">
+ <img src =https://github.com/CyberFlash1/Flash028/blob/8db593eba15323bfb0af3dd0e8e80b111a7cc915/Splunk/splunk%20enterprise%20lab.png width="500">
 </div>
   </br>
-
 
 ${{\color{Yellow}\large{\textsf{1️⃣ RHEL Universal Forwarder + Indexer (VM1)\ }}}}\$
 
