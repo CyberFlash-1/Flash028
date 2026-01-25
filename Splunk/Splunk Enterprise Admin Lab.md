@@ -1,8 +1,8 @@
 
   $${{\color{Yellow}\huge{\textsf{Splunk Enterprise Lab\ }}}}\$$
 
----
-$${{\color{Silver}\huge{\textsf{Summary }}}}\$$
+
+$${{\color{Orange}\huge{\textsf{Overview }}}}\$$
 
 ---
 In this lab I set up a splunk enviroment consisiting of:
@@ -13,8 +13,7 @@ In this lab I set up a splunk enviroment consisiting of:
 
 The goal was to simulate a small-scale Splunk deployment, including forwarding logs from multiple sources, indexing them centrally, and managing configurations via a deployment server.
 
-
-
+$${{\color{Orange}\huge{\textsf{Architecture }}}}\$$
 <div align="center">
  <img src =https://github.com/CyberFlash1/Flash028/blob/8db593eba15323bfb0af3dd0e8e80b111a7cc915/Splunk/splunk%20enterprise%20lab.png width="500">
 </div>
@@ -22,7 +21,7 @@ The goal was to simulate a small-scale Splunk deployment, including forwarding l
 
 ${{\color{Yellow}\large{\textsf{1️⃣ RHEL Universal Forwarder + Indexer (VM1)\ }}}}\$
 
-Step 1: Download Splunk
+${{\color{Red}\large{\textsf{Step 1: Download Splunk\ }}}}\$
 ```
 # Download Splunk Enterprise
 wget -O splunk-10.0.2-linux-x86_64.tgz "https://download.splunk.com/products/splunk/releases/10.0.2/linux/splunk-10.0.2-e2d18b4767e9-linux-x86_64.tgz"
@@ -30,7 +29,7 @@ wget -O splunk-10.0.2-linux-x86_64.tgz "https://download.splunk.com/products/spl
 # Extract
 tar -xvzf splunk-10.0.2-linux-x86_64.tgz -C /opt/
 ```
-${{\color{Yellow}\large{\textsf{Step 2: Install Universal Forwarder (UF)\ }}}}\$
+${{\color{Red}\large{\textsf{Step 2: Install Universal Forwarder (UF)\ }}}}\$
 ```
 # Download UF
 wget -O splunkforwarder-10.0.2-linux-x86_64.tgz "https://download.splunk.com/products/universalforwarder/releases/10.0.2/linux/splunkforwarder-10.0.2-e2d18b4767e9-linux-x86_64.tgz"
@@ -38,7 +37,7 @@ wget -O splunkforwarder-10.0.2-linux-x86_64.tgz "https://download.splunk.com/pro
 # Extract
 tar -xvzf splunkforwarder-10.0.2-linux-x86_64.tgz -C /opt/
 ```
-${{\color{Yellow}\large{\textsf{Step 3: Start Splunk Services\ }}}}\$
+${{\color{Red}\large{\textsf{Step 3: Start Splunk Services\ }}}}\$
 ```
 # Start Splunk Enterprise
 /opt/splunk/bin/splunk start --accept-license
@@ -65,11 +64,13 @@ msiexec /i splunk-10.0.2-x64-release.msi AGREETOLICENSE=Yes
 # Start Splunk Enterprise
 "C:\Program Files\Splunk\bin\splunk.exe" start
 ```
-Step 3: Configure Deployment Server
+${{\color{Red}\large{\textsf{Step 3: Configure Deployment Server\ }}}}\$
+
 Navigate to Settings → Forwarder Management
 Add server class and assign deployed UFs
 Point clients (UFs) to DS IP
-Step 4: Install Universal Forwarder
+
+${{\color{Red}\large{\textsf{Step 4: Install Universal Forwarder\ }}}}\$
 ```
 # Run UF installer
 msiexec /i splunkforwarder-10.0.2-x64-release.msi AGREETOLICENSE=Yes
@@ -81,6 +82,7 @@ msiexec /i splunkforwarder-10.0.2-x64-release.msi AGREETOLICENSE=Yes
 "C:\Program Files\SplunkUniversalForwarder\bin\splunk.exe" add monitor "C:\Windows\System32\winevt\Logs"
 ```
 ${{\color{Orange}\huge{\textsf{Outcome}}}}$
+---
 Successfully set up a 2-node Splunk environment
 - RHEL UF sending Linux logs → Indexer
 - Windows UF sending Windows Event Logs → Indexer
