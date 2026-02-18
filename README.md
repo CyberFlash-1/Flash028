@@ -96,7 +96,5 @@
 </div>
 
 <div align="center" style="font-size: 0.9em; color: #00AAAA; opacity: 0.8;">
-  
   <sub>NEON PROTOCOL v2.6 — LAST SYNC: FEB 18 2026 — STATUS: ONLINE & HUNTING</sub>
-  
 </div>
